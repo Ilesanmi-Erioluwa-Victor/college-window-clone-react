@@ -1,43 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>React App</title>
+  <script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/md5@2.3.0/dist/md5.min.js"></script>
+  <script src="./ZegoRoomKit.js"></script>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+<script>
+  const SecretID = 2160237;
+  const ProductID = 1832;
+  const SecretSign =
+    "af16bf96567a4eecaf4a58139d0b95d158ff06cbaba267c8b418720571160121";
+  const getTokenUrl = "https://roomkit-api.zego.im/auth/get_sdk_token";
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  const classId = window.localStorage.getItem("class_id");
+  const tutorName = window.localStorage.getItem("tutorName");
+  const url = window.localStorage.getItem("url");
+  const college_class_id = window.localStorage.getItem("college_class_id");
+  const urlParams = new URLSearchParams(window.location.search);
+
+  async function getSDKToken(SecretSign, getTokenUrl) {
+    const timestamp = Math.floor(new Date().getTime() / 1000) + 3600 * 24;
+    const deviceId = ZegoRoomKit.deviceID();
+    const verifyType = 3;
+    const version = 1;
+    const signStr = `${SecretSign.substr(
+      0,
+      32
+    )}${deviceId}${verifyType}${version}${timestamp}`;
+    const sign = MD5(signStr);
+
+    const res = await axios({
+      method: "post",
+      url: getTokenUrl,
+      data: {
+        common_data: {
+          platform: 32,
+        },
+        sign: sign,
+        secret_id: SecretID,
+        device_id: deviceId,
+        timestamp: timestamp,
+      },
+    });
+    if (res.data.ret.code !== 0)
+      throw new Error(
+        `get token error。{code:${res.data.ret.code},message:${res.data.ret.message}}`
+      );
+    return res.data.data.sdk_token;
+  }
+
+  // window.onload = init();
+  async function init() {
+    try {
+      const zg = new ZegoRoomKit();
+      zg.init({
+        secretID: SecretID,
+      });
+      const token = await getSDKToken(SecretSign, getTokenUrl);
+      localStorage.setItem("sdk_token", token);
+      let config;
+      if (classId && tutorName) {
+        console.log(classId, tutorName);
+        config = {
+          userID: 111112,
+          userName: tutorName || "ayomiku",
+          roomID: classId,
+          // roomID: "1111111199",
+          token,
+          role: 1,
+          productID: ProductID, // productID
+        };
+      }
+      await zg.inRoomService().joinRoomWithConfig(config, "root");
+    } catch (error) {
+      console.error(`init error`, error);
+    }
+  }
+  init();
+  // window.addEventListener("DOMContentLoaded", );
+
+  const zg = new ZegoRoomKit();
+  // Listen for the event that the current user has ended the room.
+  zg.on("endRoom", () => {
+    console.log("------endRoom-------");
+    window.localStorage.removeItem("class_id");
+    window.localStorage.removeItem("tutorName");
+    window.location.href =
+      url === "/dashboard/console"
+        ? `/dashboard/console/?class_status=end&college_class_id=${college_class_id}`
+        : "/student-dashboard/console?=end";
+    window.localStorage.removeItem("url");
+  });
+  // Listen for the event that the current user has left the room.
+  zg.on("leaveRoom", () => {
+    console.log("------leaveRoom-------");
+  });
+  // Listen for the event that the current user is kicked out of the room.
+  zg.on("kickedOutOfRoom", () => {
+    console.log("------kickedOutOfRoom-------");
+  });
+  // Listen for the event that custom message received.
+  zg.on("receiveCustomMessage", (data) => {
+    console.log("data", data);
+  });
+  // Listen for ZEGO Message Event.
+  zg.on("messageEventNotify", (event, messageInfo) => {
+    console.log("messageEventNotify", event, messageInfo);
+  });
+  // Listen for the event that the current user capturing and publishing audio data.
+  zg.on("capturedAudioData", (data, dataLength) => {
+    console.log("pcm", dataLength);
+  });
+</script>
+
 </html>
