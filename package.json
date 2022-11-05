@@ -26,7 +26,12 @@
     "react-toastify": "^9.1.1",
     "react-uuid": "^2.0.0",
     "react-verification-input": "^3.1.1",
+    "rebass": "^4.0.7",
     "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
+    "styled-button-component": "^4.0.0",
+    "styled-components": "^4.4.1",
+    "styled-components-modifiers": "^1.2.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -52,5 +57,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "prop-types": "^15.8.1",
+    "webpack": "^5.74.0"
   }
 }
