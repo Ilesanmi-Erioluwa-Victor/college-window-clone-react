@@ -25,3 +25,18 @@ export const red = {
   900: "#FFECFA",
   1000: "#FFFFFF",
 };
+
+export const green = {
+  100: "#23967F",
+  200: "#37AA93",
+  300: "#4BBEA7",
+  400: "#5FD2BB",
+  500: "#73E6CF",
+  600: "#87FAE3",
+  700: "#9BFFF7",
+  800: "#AFFFFF",
+  900: "#C3FFFF",
+  1000: "#CDFFFF",
+  1100: "#E1FFFF",
+  1200: "#FFFFFF",
+};
