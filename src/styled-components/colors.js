@@ -18,4 +18,10 @@ export const red = {
   200: "#FF6A78",
   300: "#FF7E8C",
   400: "#FF8896",
+  500: "#FF9CAA",
+  600: "#FFB0BE",
+  700: "#FFC4D2",
+  800: "#FFD8E6",
+  900: "#FFECFA",
+  1000: "#FFFFFF",
 };
