@@ -3,6 +3,7 @@ import { normalize } from "polished";
 
 export const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
 
    ${normalize()}
   
@@ -25,4 +26,5 @@ a {
 }
 
 /* font-family: 'Fira Sans', sans-serif; */
+/* font-family: 'Signika Negative', sans-serif; */
 `;
