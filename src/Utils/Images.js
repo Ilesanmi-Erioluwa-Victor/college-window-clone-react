@@ -1,7 +1,7 @@
 
 
-const Image = ({image, className, alt}) => {
-    return <img src={image} className={className} alt={alt} loading="lazy"/>
+const Image = ({src, className, alt}) => {
+    return <img src={src} className={className} alt={alt} loading="lazy"/>
 };
 
 
