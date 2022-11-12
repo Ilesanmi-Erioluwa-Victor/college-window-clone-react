@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import { normalize } from "polished";
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
    ${normalize()}
   
@@ -23,4 +23,6 @@ a {
     display : block;
     text-decoration : none;
 }
+
+/* font-family: 'Fira Sans', sans-serif; */
 `;
