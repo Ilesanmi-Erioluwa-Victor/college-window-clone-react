@@ -1,4 +1,4 @@
-import { blue, neutral, red, yellow } from "./Colors";
+import { blue, neutral, red, yellow } from "./Color";
 
 export const defaultTheme = {
   primaryColor: blue[300],
