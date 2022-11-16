@@ -1,8 +1,9 @@
-import { Classroom } from "./Pages"
+import { Classroom, Error } from "./Pages"
 
 function App() {
   return (
    <>
+   <Error />
    <Classroom />
    </>
   );
