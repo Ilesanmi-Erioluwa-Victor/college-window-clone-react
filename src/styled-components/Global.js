@@ -20,6 +20,11 @@ img {
     object-fit : cover;
 }
 
+li {
+    list-style-type : none;
+}
+
+
 a {
     display : block;
     text-decoration : none;
