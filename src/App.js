@@ -7,8 +7,8 @@ import { Classroom, Error, Verifyaccount,
 function App() {
   return (
    <>
-   <showToast type="SUCCESS" msg="Sorry welcome..."/>
    <Login />
+
    <Dashboard />
    <StudentDashboard />
    <Payment />
