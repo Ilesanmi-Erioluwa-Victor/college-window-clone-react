@@ -1,5 +1,5 @@
  const Classroom = () => {
-  return <h4>Hello</h4>;
+  return <h1>Hello from Classroom..</h1>;
 };
 
 export default Classroom;
