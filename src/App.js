@@ -8,8 +8,8 @@ function App() {
   return (
    <>
    <Login />
-
-   <Dashboard />
+     {showToast("ERROR", "WAW....")}
+   <Dashboard/>
    <StudentDashboard />
    <Payment />
    <Verifyaccount />
