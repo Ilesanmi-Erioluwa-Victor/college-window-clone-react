@@ -13,6 +13,10 @@ export const GlobalStyle = createGlobalStyle`
         padding : 0;  
     }
 
+    :root {
+        font-family: 'Fira Sans', sans-serif;
+        font-size : 62.5%;
+    }
 
 img {
     max-width: 100%;

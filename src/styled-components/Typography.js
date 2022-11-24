@@ -1,4 +1,4 @@
-export const typeScale = {
+export const TypeScale = {
   header1: "1.8rem",
   header2: "1.6rem",
   header3: "1.4rem",
