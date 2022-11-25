@@ -22,7 +22,6 @@ const Button = styled.button`
   border: none;
   min-width: 100px;
   cursor: pointer;
-  font-family: "Roboto Mono" monospace;
   outline : none;
   
 `;
@@ -30,3 +29,32 @@ const Button = styled.button`
 const NextBtn = styled(Button)`
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
+
+const PrimaryBtn = styled(Button)`
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
+`;
+
+const SecondaryBtn = styled(Button)`
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
+`;
+
+const TertiaryBtn = styled(Button)`
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
+`;
+
+const DarkThemeBtn = styled(Button)`
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
+`;
+
+const AuthButton = styled(Button)`
+  ${applyStyleModifiers(BUTTON_MODIFIERS)}
+`;
+
+export {
+  PrimaryBtn,
+  SecondaryBtn,
+  DarkThemeBtn,
+  TertiaryBtn,
+  AuthButton,
+  NextBtn,
+};
