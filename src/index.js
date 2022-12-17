@@ -13,8 +13,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <GlobalStyle />
-      <App />
       <ToastContainer />
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );
