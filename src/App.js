@@ -2,21 +2,23 @@ import { Classroom, Error, Verifyaccount,
   Dashboard, StudentDashboard, Payment,
    Login, Signup, } from "./Pages"
 
-   import { showToast } from "./Utils/Toasts";
+// import { ToastContainer } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-   <>
-   <Login />
-     {showToast("ERROR", "WAW....")}
-   <Dashboard/>
-   <StudentDashboard />
-   <Payment />
-   <Verifyaccount />
-   <Signup />
-   <Error />
-   <Classroom />
-   </>
+    <>
+      <Login />
+
+      <Dashboard />
+      <StudentDashboard />
+      <Payment />
+      <Verifyaccount />
+      <Signup />
+      <Error />
+      <Classroom />
+      {/* <ToastContainer /> */}
+    </>
   );
 }
 

@@ -4,7 +4,7 @@ export const showToast = (type, msg) => {
   switch (type) {
     case "SUCCESS":
       toast.success(msg, {
-        position: toast.POSITION.BOTTOM_RIGHT,
+        position: toast.POSITION.TOP_RIGHT,
       });
       break;
 
