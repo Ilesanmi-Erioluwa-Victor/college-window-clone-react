@@ -12,7 +12,27 @@ export const Main = styled.main`
 
   .signup__form {
     width : 50%;
+
+    display : flex;
+    flex-direction : column;
+    /* justify-content : center; */
+
+    padding : 5rem 3rem 3rem 4rem;
+    row-gap : 1rem;
+
+    h2 {
+        font-weight: 700;
+        font-size: ${TypeScale.headerl};
+        letter-spacing: 0.04em;
+        color: ${grey[100]};
+    }
+
+    p {
+        align-self : center;
+    }
   }
+
+
 
   .signup__intro {
     background-color : ${green[100]}
