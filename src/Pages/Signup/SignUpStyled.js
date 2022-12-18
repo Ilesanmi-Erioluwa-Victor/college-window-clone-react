@@ -18,7 +18,7 @@ export const Main = styled.main`
     /* justify-content : center; */
 
     padding : 5rem 3rem 3rem 4rem;
-    row-gap : 1rem;
+    /* row-gap : 1rem; */
     
 
     h2 {
@@ -45,7 +45,7 @@ export const Main = styled.main`
         display : flex;
         align-items : center;
         justify-content : center;
-        gap : 1rem;
+        /* gap : 1rem; */
     }
 
     h3 {
@@ -58,7 +58,7 @@ export const Main = styled.main`
         margin-bottom : 1rem;
     }
 
-    .form {
+    .form{
       align-self : center;
 
       display :  flex;
@@ -67,6 +67,33 @@ export const Main = styled.main`
       border-left : 3px solid red;
       width : 90%;
       margin : 0 auto;
+      /* row-gap : 1rem; */
+
+      fieldset {
+       display : flex;
+       flex-direction : column;
+       row-gap : 0.5rem;
+
+       .styled {
+        border : 1px solid grey;
+        padding : 0.45rem;
+        border-radius : 0.2rem;
+       }
+      }
+
+      .signup {
+      /* align-self : flex-start; */
+      border-radius : 0.2rem;
+      width : 95%;
+      margin : 0 auto;
+      padding: 0.35em 0.625em 0.75em;
+
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      }
     }
   }
 

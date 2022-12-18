@@ -51,7 +51,7 @@ const Signup = () => {
 
         <h3>OR</h3>
 
-        <form className= "form">
+        <form className="form">
           {/* FirstName fieldset */}
           <fieldset>
             <label>First Name </label>
@@ -61,6 +61,7 @@ const Signup = () => {
               name={"firstname"}
               value={"Eric"}
               onChange={""}
+              className="styled"
             />
           </fieldset>
 
@@ -73,6 +74,7 @@ const Signup = () => {
               name={"email"}
               value={"Eric@gmail.com"}
               onChange={""}
+              className="styled"
             />
           </fieldset>
 
@@ -85,10 +87,11 @@ const Signup = () => {
               name={"password"}
               value={"Eric"}
               onChange={""}
+              className="styled"
             />
           </fieldset>
 
-          <Input type="submit" value= "SIGN UP" />
+          <Input type="submit" value="SIGN UP" className="signup"/>
         </form>
       </section>
 
