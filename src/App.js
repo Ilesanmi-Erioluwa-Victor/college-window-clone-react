@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 
 import { ModalProvider } from "styled-react-modal";
-import { useThemeToggle } from "./hooks";
+import { useThemeToggle } from "./Hooks";
 import { darkTheme, defaultTheme } from "./styled-components";
 
 import {

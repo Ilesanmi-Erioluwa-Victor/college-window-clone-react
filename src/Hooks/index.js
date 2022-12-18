@@ -1,2 +1,2 @@
-export * from "./Usetheme";
-export * from "./Uselocalstorage";
+export * from "./usetheme";
+export * from "./uselocalstorage";
