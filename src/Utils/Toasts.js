@@ -1,19 +1,20 @@
-import { toast } from "react-toastify";
+import React from "react";
+import { ToastContainer } from "react-toastify";
 
-export const showToast = (type, msg) => {
-  switch (type) {
-    case "SUCCESS":
-      toast.success(msg, {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-      break;
-
-    case "ERROR":
-      toast.error(msg, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-      });
-      break;
-    default:
-      return `Sorry, no type was found ...`;
-  }
-};
+export default function Toastify() {
+  return (
+    <ToastContainer
+      limit={1}
+      theme="dark"
+      position="bottom-center"
+      autoClose={5000}
+      hideProgressBar
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+    />
+  );
+}
