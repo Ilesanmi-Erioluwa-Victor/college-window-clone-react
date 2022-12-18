@@ -9,6 +9,7 @@ import Overlap1 from "../../Images/overlap1.png";
 import Overlap2 from "../../Images/overlap2.png";
 import { Main } from "./SignUpStyled";
 import { Input } from "../../components"
+import {Image, Google, Facebook, Linkedin} from "../../Utils/Images"
 
 const Signup = () => {
   const naviagte = useNavigate();
@@ -37,15 +38,21 @@ const Signup = () => {
 
         <ul className="media-link">
           <li>
-            <a href="#">face</a>
+            <a href="#">
+              <Image src={Google} alt={"WAwa"} className="media-icon" />
+            </a>
           </li>
 
           <li>
-            <a href="#">Twit</a>
+            <a href="#">
+              <Image src={Facebook} alt={"WAwa"} className="media-icon" />
+            </a>
           </li>
 
           <li>
-            <a href="#">Linked</a>
+            <a href="#">
+              <Image src={Linkedin} alt={"WAwa"} className="media-icon" />
+            </a>
           </li>
         </ul>
 
@@ -91,7 +98,7 @@ const Signup = () => {
             />
           </fieldset>
 
-          <Input type="submit" value="SIGN UP" className="signup"/>
+          <Input type="submit" value="SIGN UP" className="signup" />
         </form>
       </section>
 

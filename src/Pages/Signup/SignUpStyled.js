@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { green, grey, TypeScale } from "../../styled-components";
+import { green, grey, TypeScale, red } from "../../styled-components";
 
 export const Main = styled.main`
   height : 100vh;
   display : flex;
-  /* align-items : center;
-  justify-content : center; */
+  align-items : center;
+  justify-content : center;
   background-color :${grey[1200]};
-
+  overflow : hidden;
 
 
   .signup__form {
@@ -15,10 +15,10 @@ export const Main = styled.main`
 
     display : flex;
     flex-direction : column;
-    /* justify-content : center; */
+    justify-content : center;
 
-    padding : 5rem 3rem 3rem 4rem;
-    /* row-gap : 1rem; */
+    padding : 5rem 4rem 3rem 4rem;
+    row-gap : 1rem;
     
 
     h2 {
@@ -29,7 +29,6 @@ export const Main = styled.main`
         letter-spacing: 0.04em;
         color: ${grey[100]};
         margin : 0 auto;
-        border-left : 3px solid red;
     }
 
     p {
@@ -45,7 +44,13 @@ export const Main = styled.main`
         display : flex;
         align-items : center;
         justify-content : center;
-        /* gap : 1rem; */
+        gap : 1rem;
+
+        .media-icon {
+            width :1.5rem;
+            height : 1.5rem;
+            border-radius : 50%; 
+        }
     }
 
     h3 {
@@ -64,15 +69,14 @@ export const Main = styled.main`
       display :  flex;
       flex-direction : column;
       justify-content : center;
-      border-left : 3px solid red;
       width : 90%;
       margin : 0 auto;
-      /* row-gap : 1rem; */
+       row-gap : 0.5rem;
 
       fieldset {
        display : flex;
        flex-direction : column;
-       row-gap : 0.5rem;
+       row-gap : 0.3rem;
 
        .styled {
         border : 1px solid grey;
@@ -82,17 +86,18 @@ export const Main = styled.main`
       }
 
       .signup {
-      /* align-self : flex-start; */
       border-radius : 0.2rem;
       width : 95%;
       margin : 0 auto;
       padding: 0.35em 0.625em 0.75em;
-
+      font-weight: 700;
+      font-size: ${TypeScale.paragraph};
+      color: ${grey[1200]};
 
       display: flex;
       justify-content: center;
       align-items: center;
-
+     background : ${red[100]};
       }
     }
   }

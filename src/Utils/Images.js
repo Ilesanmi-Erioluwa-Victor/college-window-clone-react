@@ -18,6 +18,9 @@ import Useravatar from "../Assets/Useravatar.png";
 import Video from "../Assets/Video.svg";
 import Videocreate from "../Assets/Videocreate.svg";
 import Walletmoney from "../Assets/Walletmoney.svg";
+import Facebook from "../Assets/Facebook.png"
+import Google from "../Assets/Google.png";
+import Linkedin from "../Assets/Linkedin.png";
 
 const Image = ({src, className, alt}) => {
     return (
@@ -49,5 +52,8 @@ export {
     Endcall,
     Earning,
     Createclass,
-    Closecamera
+    Closecamera,
+    Facebook,
+    Linkedin,
+    Google
 }
