@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size : 62.5%;
     }
 
+
 img {
     max-width: 100%;
     height: auto;
@@ -32,6 +33,12 @@ li {
 a {
     display : block;
     text-decoration : none;
+}
+
+fieldset {
+    border : none;
+    outline : none;
+
 }
 
 /* font-family: 'Fira Sans', sans-serif; */
