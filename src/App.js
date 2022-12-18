@@ -1,5 +1,6 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import { ModalProvider } from "styled-react-modal";
+import { ThemeProvider } from "styled-components";
 
 
 import { useThemeToggle } from "./Hooks";
@@ -27,29 +28,31 @@ function App() {
     <>
       <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
         <NetWorkWrapper>
-          <Routes>
-            <Route element={<Login />} path="login" exact />
+          <ModalProvider>
+            <Routes>
+              <Route element={<Login />} path="login" exact />
 
-            <Route element={<Dashboard />} path="dashboard" exact />
+              <Route element={<Dashboard />} path="dashboard" exact />
 
-            <Route
-              element={<StudentDashboard />}
-              path="studentDashboard"
-              exact
-            />
+              <Route
+                element={<StudentDashboard />}
+                path="studentDashboard"
+                exact
+              />
 
-            <Route element={<Payment />} path="payment" exact />
+              <Route element={<Payment />} path="payment" exact />
 
-            <Route element={<Verifyaccount />} path="verifyAccount" exact />
+              <Route element={<Verifyaccount />} path="verifyAccount" exact />
 
-            <Route element={<Signup />} path="signup/login" exact />
+              <Route element={<Signup />} path="signup/login" exact />
 
-            <Route element={<Error />} path="*" exact />
+              <Route element={<Error />} path="*" exact />
 
-            <Route element={<Classroom />} path="classroom" exact />
+              <Route element={<Classroom />} path="classroom" exact />
 
-            {/* <ToastContainer /> */}
-          </Routes>
+              {/* <ToastContainer /> */}
+            </Routes>
+          </ModalProvider>
         </NetWorkWrapper>
       </ThemeProvider>
     </>
