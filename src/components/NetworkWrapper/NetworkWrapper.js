@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { toast } from "react-toastify";
 
-export default function NetWorkWrapper({ children }) {
+ function NetWorkWrapper({ children }) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       window &&
@@ -44,3 +44,5 @@ export default function NetWorkWrapper({ children }) {
   }, []);
   return <div>{children}</div>;
 }
+
+export default NetWorkWrapper
