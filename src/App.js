@@ -1,6 +1,14 @@
-import { Classroom, Error, Verifyaccount, 
-  Dashboard, StudentDashboard, Payment,
-   Login, Signup, } from "./Pages"
+import { Route, Routes } from "react-router-dom";
+import {
+  Classroom,
+  Error,
+  Verifyaccount,
+  Dashboard,
+  StudentDashboard,
+  Payment,
+  Login,
+  Signup,
+} from "./Pages";
 
 // import { ToastContainer } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
@@ -8,16 +16,19 @@ import { Classroom, Error, Verifyaccount,
 function App() {
   return (
     <>
-      <Login />
+      <Routes>
+        <Route element={<Login />} path="login" exact/>
+        
 
-      <Dashboard />
-      <StudentDashboard />
-      <Payment />
-      <Verifyaccount />
-      <Signup />
-      <Error />
-      <Classroom />
-      {/* <ToastContainer /> */}
+        <Dashboard />
+        <StudentDashboard />
+        <Payment />
+        <Verifyaccount />
+        <Signup />
+        <Error />
+        <Classroom />
+        {/* <ToastContainer /> */}
+      </Routes>
     </>
   );
 }
