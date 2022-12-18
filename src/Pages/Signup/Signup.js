@@ -35,7 +35,7 @@ const Signup = () => {
         <h2>Create Account</h2>
         <p>Sign up with</p>
 
-        <ul>
+        <ul className="media-link">
           <li>
             <a href="#">face</a>
           </li>
@@ -54,7 +54,7 @@ const Signup = () => {
         <form>
           {/* FirstName fieldset */}
           <fieldset>
-            <label>First Name : </label>
+            <label>First Name </label>
             <Input
               type="text"
               placeholder={"Enter first Name"}
@@ -66,7 +66,7 @@ const Signup = () => {
 
           {/* Email fieldset */}
           <fieldset>
-            <label>Email : </label>
+            <label>Email </label>
             <Input
               type="email"
               placeholder={"Enter Email address"}
@@ -78,7 +78,7 @@ const Signup = () => {
 
           {/* Password fieldset */}
           <fieldset>
-            <label>Password : </label>
+            <label>Password</label>
             <Input
               type="password"
               placeholder={"Enter Password"}

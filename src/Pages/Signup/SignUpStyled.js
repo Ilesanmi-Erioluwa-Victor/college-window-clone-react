@@ -29,6 +29,27 @@ export const Main = styled.main`
 
     p {
         align-self : center;
+        font-weight: 400;
+        font-size: ${TypeScale.paragraph};
+        color: ${grey[100]};
+    }
+
+    .media-link {
+        align-self : center;
+
+        display : flex;
+        align-items : center;
+        justify-content : center;
+        gap : 1rem;
+    }
+
+    h3 {
+        align-self : center;
+
+        font-weight: 400;
+        font-size: ${TypeScale.paragraph};     
+        text-align: center;
+        color: ${grey[100]};
     }
   }
 
