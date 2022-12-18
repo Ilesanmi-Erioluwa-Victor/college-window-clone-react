@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
 import { DropdownDate } from "react-dropdown-date";
 
+import Img from "../../Images/bg.png"
 
 const Signup = () => {
   const naviagte = useNavigate();
@@ -24,9 +25,22 @@ const Signup = () => {
      });
 
   return (
-    <div>
+    <main>
+      <section></section>
 
-    </div>
+      <section>
+        <figure>
+          <img src={Img} loading="lazy" alt="background" />
+        </figure>
+
+        <div>
+          <h2>Welcome to college</h2>
+          <p>
+            Sign up to tutor and get tutor <span>services. </span>
+          </p>
+        </div>
+      </section>
+    </main>
   );
 };
 
