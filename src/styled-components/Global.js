@@ -14,8 +14,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     :root {
-        font-family: 'Fira Sans', sans-serif;
-        font-size : 62.5%;
+        font-family: 'Fira Sans', 'Signika Negative', sans-serif;
+        /* font-size : 62.5%; */
     }
 
 

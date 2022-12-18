@@ -28,15 +28,17 @@ const Signup = () => {
 
   return (
     <Main>
-      <section></section>
+      <section className="signup__form">
+        <h2>Create Account</h2>
+      </section>
 
-      <section>
-        <figure>
+      <section className="signup__intro">
+        <figure className="signup__intro--img">
           <img src={Img} loading="lazy" alt="background" />
         </figure>
 
-        <div>
-          <h2>Welcome to college</h2>
+        <div className="signup__intro--writeups">
+          <h2>Welcome to College</h2>
           <p>
             Sign up to tutor and get tutor <span>services. </span>
           </p>
