@@ -1,4 +1,7 @@
 export const TypeScale = {
+  headerxxl : "3rem",
+  headerxl : "2.5rem",
+  headerl : "2rem",
   header1: "1.8rem",
   header2: "1.6rem",
   header3: "1.4rem",

@@ -5,6 +5,8 @@ import { DropdownDate } from "react-dropdown-date";
 
 
 import Img from "../../Images/bg.png"
+import Overlap1 from "../../Images/overlap1.png";
+import Overlap2 from "../../Images/overlap2.png";
 import { Main } from "./SignUpStyled";
 
 const Signup = () => {
@@ -38,10 +40,24 @@ const Signup = () => {
         </figure>
 
         <div className="signup__intro--writeups">
+          <img
+            src={Overlap1}
+            loading="lazy"
+            alt="background"
+            className="absolute first"
+          />
+
           <h2>Welcome to College</h2>
           <p>
             Sign up to tutor and get tutor <span>services. </span>
           </p>
+
+          <img
+            src={Overlap2}
+            loading="lazy"
+            alt="background"
+            className="absolute second"
+          />
         </div>
       </section>
     </Main>
