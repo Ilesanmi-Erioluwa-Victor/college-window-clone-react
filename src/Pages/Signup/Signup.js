@@ -3,7 +3,9 @@ import { toast } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
 import { DropdownDate } from "react-dropdown-date";
 
+
 import Img from "../../Images/bg.png"
+import { Main } from "./SignUpStyled";
 
 const Signup = () => {
   const naviagte = useNavigate();
@@ -25,7 +27,7 @@ const Signup = () => {
      });
 
   return (
-    <main>
+    <Main>
       <section></section>
 
       <section>
@@ -40,7 +42,7 @@ const Signup = () => {
           </p>
         </div>
       </section>
-    </main>
+    </Main>
   );
 };
 
