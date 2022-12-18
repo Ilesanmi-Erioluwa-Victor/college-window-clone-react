@@ -41,12 +41,12 @@ export const Main = styled.main`
     }
 
     .first {
-        top : 4rem;
+        top : 2rem;
         left : 2rem;
     }
 
     .second {
-        bottom: 2rem;
+        bottom: 1rem;
         right : 2rem
     }
 
