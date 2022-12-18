@@ -19,12 +19,17 @@ export const Main = styled.main`
 
     padding : 5rem 3rem 3rem 4rem;
     row-gap : 1rem;
+    
 
     h2 {
+        align-self : center;
+         width : 90%;
         font-weight: 700;
-        font-size: ${TypeScale.headerl};
+        font-size: ${TypeScale.headerxl};
         letter-spacing: 0.04em;
         color: ${grey[100]};
+        margin : 0 auto;
+        border-left : 3px solid red;
     }
 
     p {
@@ -54,7 +59,14 @@ export const Main = styled.main`
     }
 
     .form {
-        
+      align-self : center;
+
+      display :  flex;
+      flex-direction : column;
+      justify-content : center;
+      border-left : 3px solid red;
+      width : 90%;
+      margin : 0 auto;
     }
   }
 
