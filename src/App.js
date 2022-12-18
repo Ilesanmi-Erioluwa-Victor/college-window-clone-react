@@ -3,10 +3,9 @@ import { ModalProvider } from "styled-react-modal";
 import { ThemeProvider } from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
 
-
 import { useThemeToggle } from "./Hooks";
 import { darkTheme, defaultTheme } from "./styled-components";
-import {NetWorkWrapper } from "./components"
+import { NetWorkWrapper } from "./components";
 import Toastify from "./Utils/Toasts";
 
 import {
@@ -45,11 +44,14 @@ function App() {
 
               <Route element={<Verifyaccount />} path="/verifyAccount" exact />
 
-              <Route element={<Signup />} path="/signup-login" exact />
+              <Route element={<Signup />} path="/signup" exact />
 
-              <Route element={<Error />} path="*" exact />
+              <Route element={<Login />} path="/login" exact />
 
               <Route element={<Classroom />} path="/classroom" exact />
+              
+              <Route element={<Error />} path="*" exact />
+
 
               {/* <ToastContainer /> */}
             </Routes>
