@@ -49,11 +49,9 @@ function App() {
               <Route element={<Login />} path="/login" exact />
 
               <Route element={<Classroom />} path="/classroom" exact />
-              
+
               <Route element={<Error />} path="*" exact />
 
-
-              {/* <ToastContainer /> */}
             </Routes>
             <Toastify />
           </ModalProvider>
