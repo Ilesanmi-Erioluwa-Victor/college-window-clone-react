@@ -1,15 +1,17 @@
 import React from 'react'
+import { InputStyles } from './InputStyled'
 
-const Input = ({value, name,type, onChange, placeholder}) => {
+const Input = ({value, name,type, onChange, placeholder, className}) => {
   return (
-    <input 
-    value={value}
-    name= {name}
-    type = {type}
-    onChange = {onChange}
-    placeholder = {placeholder}
+    <InputStyles
+      value={value}
+      name={name}
+      type={type}
+      onChange={onChange}
+      placeholder={placeholder}
+      className={className}
     />
-  )
+  );
 }
 
 export default Input
