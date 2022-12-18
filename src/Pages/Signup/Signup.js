@@ -8,7 +8,21 @@ const Signup = () => {
   const naviagte = useNavigate();
   const [uploading, setUploading] = useState(false);
   const [img, setImg] = useState("");
-  
+
+   const [data, setData] = useState({
+     name: "",
+     email: "",
+     password: "",
+     isMemberType: "student",
+     dateOfBirth: "",
+   });
+
+     const [date, setDate] = useState({
+       year: "select year",
+       month: "select month",
+       day: "select day",
+     });
+
   return (
     <div>
 

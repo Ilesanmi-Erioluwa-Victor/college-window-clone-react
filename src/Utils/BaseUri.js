@@ -1,0 +1,1 @@
+export const CollegeBaseUri = `https://k9lixr.deta.dev`;
