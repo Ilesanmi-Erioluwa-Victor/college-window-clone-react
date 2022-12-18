@@ -30,25 +30,25 @@ function App() {
         <NetWorkWrapper>
           <ModalProvider>
             <Routes>
-              <Route element={<Login />} path="login" exact />
+              <Route element={<Login />} path="/login" exact />
 
-              <Route element={<Dashboard />} path="dashboard" exact />
+              <Route element={<Dashboard />} path="/dashboard" exact />
 
               <Route
                 element={<StudentDashboard />}
-                path="studentDashboard"
+                path="/studentDashboard"
                 exact
               />
 
-              <Route element={<Payment />} path="payment" exact />
+              <Route element={<Payment />} path="/payment" exact />
 
-              <Route element={<Verifyaccount />} path="verifyAccount" exact />
+              <Route element={<Verifyaccount />} path="/verifyAccount" exact />
 
-              <Route element={<Signup />} path="signup/login" exact />
+              <Route element={<Signup />} path="/signup-login" exact />
 
               <Route element={<Error />} path="*" exact />
 
-              <Route element={<Classroom />} path="classroom" exact />
+              <Route element={<Classroom />} path="/classroom" exact />
 
               {/* <ToastContainer /> */}
             </Routes>
