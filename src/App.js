@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useThemeToggle } from "./Hooks";
 import { darkTheme, defaultTheme } from "./styled-components";
 import NetWorkWrapper from "./components/NetworkWrapper/NetworkWrapper";
+import Toastify from "./Utils/Toasts";
 
 import {
   Classroom,
@@ -52,6 +53,7 @@ function App() {
 
               {/* <ToastContainer /> */}
             </Routes>
+            <Toastify />
           </ModalProvider>
         </NetWorkWrapper>
       </ThemeProvider>
