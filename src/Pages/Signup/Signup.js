@@ -51,7 +51,7 @@ const Signup = () => {
 
         <h3>OR</h3>
 
-        <form>
+        <form className= "form">
           {/* FirstName fieldset */}
           <fieldset>
             <label>First Name </label>

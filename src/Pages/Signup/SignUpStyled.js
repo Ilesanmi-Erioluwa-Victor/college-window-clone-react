@@ -50,6 +50,11 @@ export const Main = styled.main`
         font-size: ${TypeScale.paragraph};     
         text-align: center;
         color: ${grey[100]};
+        margin-bottom : 1rem;
+    }
+
+    .form {
+        
     }
   }
 
