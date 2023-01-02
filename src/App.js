@@ -3,10 +3,10 @@ import { ModalProvider } from "styled-react-modal";
 import { ThemeProvider } from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
 
-import { useThemeToggle } from "./Hooks";
-import { darkTheme, defaultTheme } from "./styled-components";
-import { NetWorkWrapper } from "./components";
-import Toastify from "./Utils/Toasts";
+import { useThemeToggle } from "Hooks";
+import { darkTheme, defaultTheme } from "Styled-components";
+import { NetWorkWrapper } from "components";
+import Toastify from "Utils/Toasts";
 
 import {
   Classroom,
