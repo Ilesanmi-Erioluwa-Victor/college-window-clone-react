@@ -15,9 +15,10 @@ import {
   Dashboard,
   StudentDashboard,
   Payment,
-  Login,
   Signup,
-} from "./Pages";
+  Login
+} from "Pages";
+
 
 // import { ToastContainer } from "react-toastify";
 
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <main className="conatiner">
+      <div className="overall-layout">
       <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
         <NetWorkWrapper>
           <ModalProvider>
@@ -57,6 +59,7 @@ function App() {
           </ModalProvider>
         </NetWorkWrapper>
       </ThemeProvider>
+      </div>
     </main>
   );
 }
