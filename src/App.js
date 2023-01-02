@@ -25,7 +25,7 @@ function App() {
   const { useDarkTheme } = useThemeToggle();
 
   return (
-    <>
+    <main className="conatiner">
       <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
         <NetWorkWrapper>
           <ModalProvider>
@@ -57,7 +57,7 @@ function App() {
           </ModalProvider>
         </NetWorkWrapper>
       </ThemeProvider>
-    </>
+    </main>
   );
 }
 
