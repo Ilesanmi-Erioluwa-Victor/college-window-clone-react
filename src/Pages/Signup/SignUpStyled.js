@@ -88,7 +88,7 @@ export const Main = styled.main`
       border-radius : 0.2rem;
       width : 95%;
       margin : 0 auto;
-      padding: 0.35em 0.625em 0.75em;
+      // padding: 0.35em 0.625em 0.75em;
       font-weight: 700;
       font-size: ${TypeScale.paragraph};
       color: ${grey[1200]};
@@ -97,6 +97,11 @@ export const Main = styled.main`
       justify-content: center;
       align-items: center;
      background : ${red[100]};
+
+     &:hover {
+      background : black;
+      color : white;
+     }
       }
     }
   }

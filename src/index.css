@@ -18,3 +18,20 @@ grid-column: container-start/container-end;
 .padd {
   padding: calc(1rem + 8vh) calc(1rem + 8vw);
 }
+
+a, input[type=submit] {
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type=submit] {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+
