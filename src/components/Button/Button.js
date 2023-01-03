@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components"
-import { TypeScale } from "../../styled-components/Typography"
+import { TypeScale } from "../../Css-Styled/Typography"
 import { applyStyleModifiers } from "styled-components-modifiers"
 
 const BUTTON_MODIFIERS = {

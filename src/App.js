@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
 
 import { useThemeToggle } from "Hooks";
-import { darkTheme, defaultTheme } from "Styled-components";
+import { defaultTheme, darkTheme} from "Css-Styled"
 import { NetWorkWrapper } from "components";
 import Toastify from "Utils/Toasts";
 

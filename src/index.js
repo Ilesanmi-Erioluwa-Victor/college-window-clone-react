@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import 'index.css';
+import App from 'App';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from "react-router-dom"
-import { GlobalStyle } from "./styled-components/Global"
+import { GlobalStyle } from "Css-Styled/Global"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

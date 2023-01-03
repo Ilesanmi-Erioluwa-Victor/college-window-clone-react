@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { green, grey, TypeScale, red } from "../../styled-components";
+import { green, grey, TypeScale, red } from "../../Css-Styled";
 
 export const Main = styled.main`
   height : 100vh;
