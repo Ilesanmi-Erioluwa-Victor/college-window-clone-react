@@ -2,17 +2,15 @@ import styled from "styled-components";
 import { green, grey, TypeScale, red } from "../../Css-Styled";
 
 export const Main = styled.main`
-  height : 100vh;
   display : flex;
-  align-items : center;
+  // align-items : center;
   justify-content : center;
   background-color :${grey[1200]};
-  overflow : hidden;
 
 
   .signup__form {
     width : 50%;
-
+    height : 100vh;
     display : flex;
     flex-direction : column;
     justify-content : center;
@@ -22,6 +20,7 @@ export const Main = styled.main`
     
 
     h2 {
+      text-align : center;
         align-self : center;
          width : 90%;
         font-weight: 700;
@@ -105,7 +104,8 @@ export const Main = styled.main`
 
 
   .signup__intro {
-    background-color : ${green[100]}
+    height : 100vh;
+    background-color : ${green[100]};
     height : inherit;
     width : 50%;
     position : relative;

@@ -4,12 +4,12 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { DropdownDate } from "react-dropdown-date";
 
 
-import Img from "../../Images/bg.png"
-import Overlap1 from "../../Images/overlap1.png";
-import Overlap2 from "../../Images/overlap2.png";
+import Img from "Images/bg.png"
+import Overlap1 from "Images/overlap1.png";
+import Overlap2 from "Images/overlap2.png";
 import { Main } from "./SignUpStyled";
-import { Input } from "../../components"
-import {Image, Google, Facebook, Linkedin} from "../../Utils/Images"
+import { Input } from "components"
+import {Image, Google, Facebook, Linkedin} from "Utils/Images"
 
 const Signup = () => {
   const naviagte = useNavigate();
@@ -66,7 +66,7 @@ const Signup = () => {
               type="text"
               placeholder={"Enter first Name"}
               name={"firstname"}
-              value={"Eric"}
+              value={data.name}
               onChange={""}
               className="styled"
             />
