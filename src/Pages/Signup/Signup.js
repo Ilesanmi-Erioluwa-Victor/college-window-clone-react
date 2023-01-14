@@ -102,12 +102,12 @@ const Signup = () => {
         </form>
       </section>
 
-      <section className="signup__intro">
+      <section className="signup__intro sec-flex">
         <figure className="signup__intro--img">
           <img src={Img} loading="lazy" alt="background" />
         </figure>
 
-        <div className="signup__intro--writeups">
+        <div className="signup__intro--writeups sec-flex">
           <img
             src={Overlap1}
             loading="lazy"

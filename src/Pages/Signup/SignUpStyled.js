@@ -107,9 +107,8 @@ export const Main = styled.main`
     height : inherit;
     width : 50%;
     position : relative;
-
-    display: flex;
-    flex-direction : column;
+     
+    gap : 0;
     justify-content : center;
     padding : 5rem 3rem 3rem 4rem;
   }
@@ -118,8 +117,6 @@ export const Main = styled.main`
   .signup__intro--writeups {
     text-align: center;
 
-    display : flex;
-    flex-direction : column;
     justify-content : center;
     row-gap : 1rem;
 
@@ -139,15 +136,16 @@ export const Main = styled.main`
     }
 
     h2 {
-       font-weight: 700;
-       font-size:${TypeScale.headerl} ;
+       font-weight: 600;
+       font-size:${TypeScale.headerxl} ;
        letter-spacing: 0.04em;
        color:${grey[1200]};
     }
 
     p {
-        font-weight: 400;
+        font-weight: 200;
         font-size:${TypeScale.paragraph} ;
+        font-family : "Tahoma";
         letter-spacing: 0.03em;
         color:${grey[1200]};
         margin-bottom : 0.4rem;
