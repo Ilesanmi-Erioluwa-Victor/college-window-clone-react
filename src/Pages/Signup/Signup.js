@@ -58,9 +58,9 @@ const Signup = () => {
 
         <h3>OR</h3>
 
-        <form className="form">
+        <form className="form sec-flex">
           {/* FirstName fieldset */}
-          <fieldset>
+          <fieldset className="sec-flex">
             <label>First Name </label>
             <Input
               type="text"

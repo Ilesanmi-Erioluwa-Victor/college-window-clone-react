@@ -65,39 +65,31 @@ export const Main = styled.main`
 
     .form{
       align-self : center;
-
-      display :  flex;
-      flex-direction : column;
-      justify-content : center;
-      width : 90%;
-      margin : 0 auto;
-       row-gap : 0.5rem;
+      width : 100%;
+      row-gap : 0.5rem;
 
       fieldset {
-       display : flex;
-       flex-direction : column;
+      
        row-gap : 0.3rem;
 
        .styled {
         border : 1px solid grey;
-        padding : 1rem;
+        padding : 0.7rem 1.2rem;
         border-radius : 0.2rem;
+        width : 100%;
        }
       }
 
       .signup {
       border-radius : 0.2rem;
-      width : 95%;
-      margin : 0 auto;
-      // padding: 0.35em 0.625em 0.75em;
+       padding: .7rem;
       font-weight: 700;
+      width: 97%;
+      margin : auto;
       font-size: ${TypeScale.paragraph};
       color: ${grey[1200]};
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
      background : ${red[100]};
+     font-family : Arial, sans-serif;
 
      &:hover {
       background : black;
