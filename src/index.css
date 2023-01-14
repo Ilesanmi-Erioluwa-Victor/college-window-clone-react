@@ -28,7 +28,7 @@ a, input[type=submit] {
 input[type=submit] {
   color: hsl(0deg, 0%, 100%);
   font-size: 1.5rem;
-  padding: 1rem 3rem;
+  padding: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;

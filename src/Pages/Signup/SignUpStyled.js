@@ -6,6 +6,7 @@ export const Main = styled.main`
   // align-items : center;
   justify-content : center;
   background-color :${grey[1200]};
+  overflow : hidden;
 
 
   .signup__form {
@@ -16,7 +17,7 @@ export const Main = styled.main`
     justify-content : center;
 
     padding : 5rem 4rem 3rem 4rem;
-    row-gap : 1rem;
+    row-gap : 0.6rem;
     
 
     h2 {
@@ -79,7 +80,7 @@ export const Main = styled.main`
 
        .styled {
         border : 1px solid grey;
-        padding : 0.45rem;
+        padding : 1rem;
         border-radius : 0.2rem;
        }
       }
