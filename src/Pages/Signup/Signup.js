@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import { DropdownDate } from "react-dropdown-date";
 
 import Img from "Images/bg.png"
@@ -12,7 +12,7 @@ import {Image, Google, Facebook, Linkedin} from "Utils/Images"
 import { registerUser } from "Auths/Users/users";
 
 const Signup = (props) => {
-  const naviagte = useNavigate();
+  const navigate = useNavigate();
   const [uploading, setUploading] = useState(false);
   const [img, setImg] = useState("");
 
@@ -57,11 +57,16 @@ const Signup = (props) => {
         return;
        }
 
-              if(response.message === "ok") {
-             toast.success("Your account is created, wait few seconds, you will be redirected..", {
+        if(response.message === "ok") {
+        toast.success("Your account is created, wait few seconds, you will be redirected..", {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 1000,
         });
+
+        setTimeout( ()=>{
+          // Auto navigate to student_signup
+          navigate(`verifyAccount/student_signup/${email}`)
+        }, 5000)
        }
         
      }

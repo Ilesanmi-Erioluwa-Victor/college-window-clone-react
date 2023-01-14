@@ -48,7 +48,7 @@ function App() {
 
                 <Route element={<Payment />} path="/payment" />
 
-                <Route element={<Verifyaccount />} path="/verifyAccount" />
+                <Route element={<Verifyaccount />} path="/verifyAccount/:type/:email" />
 
                 <Route element={<Signup />} path="/signup" />
 
