@@ -52,19 +52,19 @@ const Signup = () => {
 
         <ul className="media-link">
           <li>
-            <a href="#">
+            <a href="hhtps://ww.google.com">
               <Image src={Google} alt={"WAwa"} className="media-icon" />
             </a>
           </li>
 
           <li>
-            <a href="#">
+            <a href="hhtps://ww.google.com">
               <Image src={Facebook} alt={"WAwa"} className="media-icon" />
             </a>
           </li>
 
           <li>
-            <a href="#">
+            <a href="hhtps://ww.google.com">
               <Image src={Linkedin} alt={"WAwa"} className="media-icon" />
             </a>
           </li>
