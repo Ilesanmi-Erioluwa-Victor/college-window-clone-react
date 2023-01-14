@@ -3,8 +3,8 @@ window.Buffer = window.Buffer || require("buffer").Buffer;
 
 aws.config.update({
   region: "us-east-1",
-  accessKeyId: "AKIA5FQPVFJSTYDEHAYH",
-  secretAccessKey: "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",
+  accessKeyId: process.env.REACT_APP_AWSKEY,
+  secretAccessKey: process.env.REACT_APP_AWS_ACCESS_KEY,
 });
 
 const s3 = new aws.S3();

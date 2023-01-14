@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
 import { DropdownDate } from "react-dropdown-date";
 
-
 import Img from "Images/bg.png"
 import Overlap1 from "Images/overlap1.png";
 import Overlap2 from "Images/overlap2.png";
@@ -20,15 +19,23 @@ const Signup = () => {
      name: "",
      email: "",
      password: "",
-     isMemberType: "student",
-     dateOfBirth: "",
+    //  isMemberType: "student",
+    //  dateOfBirth: "",
    });
 
-     const [date, setDate] = useState({
-       year: "select year",
-       month: "select month",
-       day: "select day",
-     });
+    //  const [date, setDate] = useState({
+    //    year: "select year",
+    //    month: "select month",
+    //    day: "select day",
+    //  });
+
+     const handleInputChange = (e) => {
+      const name =  e.target.name;
+      const value = e.target.value;
+
+      setData({...data, [name] : value})
+
+     }
 
   return (
     <Main>
@@ -81,7 +88,7 @@ const Signup = () => {
               placeholder={"Enter first Name"}
               name={"firstname"}
               value={data.name}
-              onChange={""}
+              onChange={handleInputChange}
               className="styled"
             />
           </fieldset>
@@ -93,8 +100,8 @@ const Signup = () => {
               type="email"
               placeholder={"Enter Email address"}
               name={"email"}
-              value={"Eric@gmail.com"}
-              onChange={""}
+              value={data.email}
+              onChange={handleInputChange}
               className="styled"
             />
           </fieldset>
@@ -106,13 +113,13 @@ const Signup = () => {
               type="password"
               placeholder={"Enter Password"}
               name={"password"}
-              value={"Eric"}
-              onChange={""}
+              value={data.password}
+              onChange={handleInputChange}
               className="styled"
             />
           </fieldset>
 
-          <Input type="submit" value="SIGN UP" className="signup" />
+          <input type="submit" value="SIGN UP" className="signup" />
         </form>
       </section>
 
