@@ -32,8 +32,13 @@ const Signup = () => {
      const handleInputChange = (e) => {
       const name =  e.target.name;
       const value = e.target.value;
-
       setData({...data, [name] : value})
+     }
+
+     const handleSubmit = e => {
+      e.preventDefault();
+      const { name, email, password } = data;
+
 
      }
 
@@ -86,7 +91,7 @@ const Signup = () => {
             <Input
               type="text"
               placeholder={"Enter first Name"}
-              name={"firstname"}
+              name={"name"}
               value={data.name}
               onChange={handleInputChange}
               className="styled"

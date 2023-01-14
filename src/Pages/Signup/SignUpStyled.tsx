@@ -189,12 +189,12 @@ export const Main = styled.main`
    }
 
    .media-first {
-    top: 0;
+    top: -1rem;
     left : 2rem;
    }
 
    .media-second {
-    bottom: 0;
+    bottom: -1rem;
     right : 2rem;
    }
    .signup__form {
