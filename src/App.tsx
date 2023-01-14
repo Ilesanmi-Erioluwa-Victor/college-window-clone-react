@@ -31,36 +31,30 @@ function App() {
           <NetWorkWrapper>
             <ModalProvider>
               <Routes>
-                <Route path="/classroom" element={<Classroom />} exact />
+                <Route path="/classroom" element={<Classroom />} />
                 {/* Auto Navigate to classroom route as homepage */}
                 <Route
                   path="/"
                   element={<Navigate replace to={"/classroom"} />}
-                  exact
                 />
-                <Route element={<Login />} path="/login" exact />
+                <Route element={<Login />} path="/login" />
 
-                <Route element={<Dashboard />} path="/dashboard" exact />
+                <Route element={<Dashboard />} path="/dashboard" />
 
                 <Route
                   element={<StudentDashboard />}
                   path="/studentDashboard"
-                  exact
                 />
 
-                <Route element={<Payment />} path="/payment" exact />
+                <Route element={<Payment />} path="/payment" />
 
-                <Route
-                  element={<Verifyaccount />}
-                  path="/verifyAccount"
-                  exact
-                />
+                <Route element={<Verifyaccount />} path="/verifyAccount" />
 
-                <Route element={<Signup />} path="/signup" exact />
+                <Route element={<Signup />} path="/signup" />
 
-                <Route element={<Login />} path="/login" exact />
+                <Route element={<Login />} path="/login" />
 
-                <Route element={<Error />} path="*" exact />
+                <Route element={<Error />} path="*" />
               </Routes>
               <Toastify />
             </ModalProvider>
