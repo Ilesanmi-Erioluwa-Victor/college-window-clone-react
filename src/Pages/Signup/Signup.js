@@ -32,6 +32,20 @@ const Signup = () => {
 
   return (
     <Main>
+       <img
+            src={Overlap1}
+            loading="lazy"
+            alt="background"
+            className="media media-first"
+          />
+
+           <img
+            src={Overlap1}
+            loading="lazy"
+            alt="background"
+            className="media media-second"
+          />
+
       <section className="signup__form">
         <h2>Create Account</h2>
         <p>Sign up with</p>
@@ -73,7 +87,7 @@ const Signup = () => {
           </fieldset>
 
           {/* Email fieldset */}
-          <fieldset>
+          <fieldset className="sec-flex">
             <label>Email </label>
             <Input
               type="email"
@@ -86,7 +100,7 @@ const Signup = () => {
           </fieldset>
 
           {/* Password fieldset */}
-          <fieldset>
+          <fieldset className="sec-flex">
             <label>Password</label>
             <Input
               type="password"

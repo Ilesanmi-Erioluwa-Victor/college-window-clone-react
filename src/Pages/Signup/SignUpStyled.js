@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { green, grey, TypeScale, red } from "../../Css-Styled";
+import { mediaMaxdevice } from "Utils";
 
 export const Main = styled.main`
   display : flex;
@@ -7,7 +8,11 @@ export const Main = styled.main`
   justify-content : center;
   background-color :${grey[1200]};
   overflow : hidden;
+   position: relative;
 
+  .media {
+    display : none;
+  }
 
   .signup__form {
     width : 50%;
@@ -137,7 +142,7 @@ export const Main = styled.main`
 
     h2 {
        font-weight: 600;
-       font-size:${TypeScale.headerxl} ;
+       font-size: 2.3rem ;
        letter-spacing: 0.04em;
        color:${grey[1200]};
     }
@@ -154,4 +159,92 @@ export const Main = styled.main`
     }
   }
 
+@media ${mediaMaxdevice.tabletL} {
+
+  .signup__form {
+    h2 {
+         font-size: 2rem ;
+    }
+  }
+
+  .signup__intro {
+    &--writeups {
+     h2 {
+    font-size: 2rem ;
+  }
+
+  p {
+    font-size : 1.3rem;
+  }
+    }
+  } 
+}
+
+@media (max-width : 890px) {
+   background-color : ${green[100]};
+  
+   .media {
+    display: block;
+    position: absolute;
+   }
+
+   .media-first {
+    top: 0;
+    left : 2rem;
+   }
+
+   .media-second {
+    bottom: 0;
+    right : 2rem;
+   }
+   .signup__form {
+    padding-top : 2rem;
+    width : 100%;
+     color : white;
+
+     h2 {
+      color : white;
+      font-size : ${TypeScale.headerxxl}
+     }
+
+     p, h3 {
+      font-size : ${TypeScale.header1};
+      color : white;
+     }
+    
+     h3 {
+      font-size : 1.3rem;
+     }
+
+     .form {
+        fieldset {
+      gap : 0.8rem;
+      label {
+        font-size : 1.4rem;
+      }
+      .styled {
+        padding : 1rem;
+      }
+     }
+     .signup {
+      padding : 1rem;
+     }
+     }
+     
+   }
+
+  .signup__intro {
+    display : none;
+ 
+  }
+}
+
+@media ${mediaMaxdevice.tabletM} {
+   .signup__form {
+     padding : 1rem;
+     /* h2 {
+      font-size : 2rem;
+     } */
+
+}
 `;
