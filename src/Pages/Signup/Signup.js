@@ -58,7 +58,7 @@ const Signup = (props) => {
        }
 
         if(response.message === "ok") {
-        toast.success("Your account is created, wait few seconds, you will be redirected..", {
+        toast.success("Your account is created, wait few seconds, you will be redirected to your account..", {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 1000,
         });
