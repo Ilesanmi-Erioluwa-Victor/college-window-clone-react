@@ -54,7 +54,7 @@ function App() {
 
                 <Route element={<Login />} path="/login" />
 
-                <Route element={<Error />} path="*" />
+                {/* <Route element={<Error />} path="*" /> */}
               </Routes>
               <Toastify />
             </ModalProvider>

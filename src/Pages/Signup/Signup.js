@@ -62,10 +62,9 @@ const Signup = (props) => {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 1000,
         });
-
-        setTimeout( ()=>{
+          setTimeout( ()=>{
           // Auto navigate to student_signup
-          navigate(`verifyAccount/student_signup/${email}`)
+          navigate(`/verifyAccount/student_signup/${email}`)
         }, 5000)
        }
         
