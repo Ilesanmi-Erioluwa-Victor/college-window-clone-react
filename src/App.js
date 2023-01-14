@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
 
 import { useThemeToggle } from "Hooks";
-import { defaultTheme, darkTheme} from "Css-Styled"
+import { defaultTheme, darkTheme } from "Css-Styled";
 import { NetWorkWrapper } from "components";
 import Toastify from "Utils/Toasts";
 
@@ -16,9 +16,8 @@ import {
   StudentDashboard,
   Payment,
   Signup,
-  Login
+  Login,
 } from "Pages";
-
 
 // import { ToastContainer } from "react-toastify";
 
@@ -28,37 +27,45 @@ function App() {
   return (
     <main className="conatiner">
       <div className="overall-layout">
-      <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
-        <NetWorkWrapper>
-          <ModalProvider>
-            <Routes>
-              <Route element={<Login />} path="/login" exact />
+        <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
+          <NetWorkWrapper>
+            <ModalProvider>
+              <Routes>
+                <Route path="/classroom" element={<Classroom />} exact />
+                {/* Auto Navigate to classroom route as homepage */}
+                <Route
+                  path="/"
+                  element={<Navigate replace to={"/classroom"} />}
+                  exact
+                />
+                <Route element={<Login />} path="/login" exact />
 
-              <Route element={<Dashboard />} path="/dashboard" exact />
+                <Route element={<Dashboard />} path="/dashboard" exact />
 
-              <Route
-                element={<StudentDashboard />}
-                path="/studentDashboard"
-                exact
-              />
+                <Route
+                  element={<StudentDashboard />}
+                  path="/studentDashboard"
+                  exact
+                />
 
-              <Route element={<Payment />} path="/payment" exact />
+                <Route element={<Payment />} path="/payment" exact />
 
-              <Route element={<Verifyaccount />} path="/verifyAccount" exact />
+                <Route
+                  element={<Verifyaccount />}
+                  path="/verifyAccount"
+                  exact
+                />
 
-              <Route element={<Signup />} path="/signup" exact />
+                <Route element={<Signup />} path="/signup" exact />
 
-              <Route element={<Login />} path="/login" exact />
+                <Route element={<Login />} path="/login" exact />
 
-              <Route element={<Classroom />} path="/classroom" exact />
-
-              <Route element={<Error />} path="*" exact />
-
-            </Routes>
-            <Toastify />
-          </ModalProvider>
-        </NetWorkWrapper>
-      </ThemeProvider>
+                <Route element={<Error />} path="*" exact />
+              </Routes>
+              <Toastify />
+            </ModalProvider>
+          </NetWorkWrapper>
+        </ThemeProvider>
       </div>
     </main>
   );
