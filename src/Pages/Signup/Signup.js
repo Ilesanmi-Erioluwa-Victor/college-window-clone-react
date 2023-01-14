@@ -10,7 +10,7 @@ import { Main } from "./SignUpStyled";
 import { Input } from "components"
 import {Image, Google, Facebook, Linkedin} from "Utils/Images"
 
-const Signup = () => {
+const Signup = (props) => {
   const naviagte = useNavigate();
   const [uploading, setUploading] = useState(false);
   const [img, setImg] = useState("");
@@ -39,6 +39,23 @@ const Signup = () => {
       e.preventDefault();
       const { name, email, password } = data;
 
+      if(!name || !email || !password) {
+        toast.error("All fields are required", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 1000,
+        });
+        return;
+      }
+       toast.success("Your form was successfully submitted..", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 1000,
+        });
+      
+
+      
+        console.log({
+          name, email, password
+        })
 
      }
 
@@ -84,7 +101,7 @@ const Signup = () => {
 
         <h3>OR</h3>
 
-        <form className="form sec-flex">
+        <form className="form sec-flex" onSubmit={handleSubmit}>
           {/* FirstName fieldset */}
           <fieldset className="sec-flex">
             <label>First Name </label>
