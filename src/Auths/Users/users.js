@@ -13,8 +13,7 @@ export const registerUser = async ({ name, password, email }) => {
     });
 
     const feedBack = await Response.json();
-
-    console.log(feedBack)
+    return feedBack;
   } catch (error) {
     console.log(error)
   }

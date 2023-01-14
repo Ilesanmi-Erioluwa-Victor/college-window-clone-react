@@ -9,6 +9,7 @@ import Overlap2 from "Images/overlap2.png";
 import { Main } from "./SignUpStyled";
 import { Input } from "components"
 import {Image, Google, Facebook, Linkedin} from "Utils/Images"
+import { registerUser } from "Auths/Users/users";
 
 const Signup = (props) => {
   const naviagte = useNavigate();
@@ -35,7 +36,7 @@ const Signup = (props) => {
       setData({...data, [name] : value})
      }
 
-     const handleSubmit = e => {
+     const handleSubmit =async e => {
       e.preventDefault();
       const { name, email, password } = data;
 
@@ -46,17 +47,23 @@ const Signup = (props) => {
         });
         return;
       }
-       toast.success("Your form was successfully submitted..", {
+       const response=  await registerUser({name, password, email});
+
+       if(response.message === "email exists!") {
+          toast.error("Your email already existed on our DB, login with your email", {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 1000,
         });
-      
+        return;
+       }
 
-      
-        console.log({
-          name, email, password
-        })
-
+              if(response.message === "ok") {
+             toast.success("Your account is created, wait few seconds, you will be redirected..", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 1000,
+        });
+       }
+        
      }
 
   return (
