@@ -13,7 +13,8 @@ const Verifyaccount = () => {
   console.log(email)
 
   return <VerifyWrap className="sec-flex">
-    <h4>Hello verify your email</h4>
+    <h1>Hello verify your email</h1>
+    <p> Please, kindly verify your account with the code sent to you </p>
      <VerificationInput
             length={7}
             validChars={[/0-9/]}
