@@ -154,7 +154,7 @@ const Signup = (props) => {
 
           <input type="submit" value="SIGN UP" className="signup" />
         </form>
-        <p>Already a member ? <span>Login</span></p>
+        <p className="login-p">Already a member ? <span>Login</span></p>
       </section>
 
       <section className="signup__intro sec-flex">

@@ -102,6 +102,11 @@ export const Main = styled.main`
      }
       }
     }
+
+    .login-p {
+      align-self : flex-end;
+      font-size : 1.1rem;
+    }
   }
 
 
