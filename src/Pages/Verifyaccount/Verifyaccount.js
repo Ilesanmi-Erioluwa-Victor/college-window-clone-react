@@ -10,7 +10,9 @@ const Verifyaccount = () => {
   const {email } = useParams();
   const [code, setCode] = useState("");
 
-  console.log(email)
+  const HandleSubmit = async () => {
+    
+  }
 
   return <VerifyWrap className="sec-flex">
     <h1>Hello verify your email</h1>
