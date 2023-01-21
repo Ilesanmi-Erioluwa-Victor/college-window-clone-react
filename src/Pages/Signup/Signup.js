@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { NavLink, Navigate, useNavigate, Link } from "react-router-dom";
 import { DropdownDate } from "react-dropdown-date";
-
-import Img from "Images/bg.png"
 import Overlap1 from "Images/overlap1.png";
-import Overlap2 from "Images/overlap2.png";
+
 import { Main } from "./SignUpStyled";
 import { Input } from "components"
 import {Image, Google, Facebook, Linkedin} from "Utils/Images"
 import { registerUser } from "Auths/Users/users";
+import SignupComp from "components/Signup/Signup";
 
 const Signup = (props) => {
   const navigate = useNavigate();
@@ -154,35 +153,11 @@ const Signup = (props) => {
 
           <input type="submit" value="SIGN UP" className="signup" />
         </form>
-        <p className="login-p">Already a member ? <span>Login</span></p>
+        <p className="login-p">Already a member ? <Link to={"/login"}>Login</Link></p>
+        
       </section>
 
-      <section className="signup__intro sec-flex">
-        <figure className="signup__intro--img">
-          <img src={Img} loading="lazy" alt="background" />
-        </figure>
-
-        <div className="signup__intro--writeups sec-flex">
-          <img
-            src={Overlap1}
-            loading="lazy"
-            alt="background"
-            className="absolute first"
-          />
-
-          <h2>Welcome to College</h2>
-          <p>
-            Sign up to tutor and get tutor <span>services. </span>
-          </p>
-
-          <img
-            src={Overlap2}
-            loading="lazy"
-            alt="background"
-            className="absolute second"
-          />
-        </div>
-      </section>
+    <SignupComp />
     </Main>
   );
 };
