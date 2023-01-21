@@ -3,7 +3,6 @@ import { green, grey, TypeScale, red } from "../../Css-Styled";
 import { mediaMaxdevice } from "Utils";
 
 export const Form =  styled.section `
-    .signup__form {
     width : 50%;
     height : 100vh;
     display : flex;
@@ -96,6 +95,6 @@ export const Form =  styled.section `
       align-self : flex-end;
       font-size : 1.1rem;
     }
-  }
+
 
 `

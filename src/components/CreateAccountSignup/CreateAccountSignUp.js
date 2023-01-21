@@ -8,6 +8,7 @@ import { Input } from "components"
 import {Image, Google, Facebook, Linkedin} from "Utils/Images"
 import { registerUser, Signup_Tutor } from "Auths";
 import upload from 'Aws/Upload';
+import { Form } from './Styled';
 
 
 const CreateAccountSignUp = () => {
@@ -94,7 +95,7 @@ const CreateAccountSignUp = () => {
   return (
     <>
 
-      <section className="signup__form">
+      <Form className="signup__form">
           <h2 className="form__section--title">
           {data.isMemberType === "student"
             ? "Create account as Student"
@@ -168,7 +169,7 @@ const CreateAccountSignUp = () => {
         </form>
         <p className="login-p">Already a member ? <Link to={"/login"}>Login</Link></p>
         
-      </section>
+      </Form>
     </>
   )
 }
