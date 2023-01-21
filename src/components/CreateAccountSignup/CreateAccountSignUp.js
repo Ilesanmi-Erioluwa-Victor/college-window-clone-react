@@ -3,90 +3,103 @@ import { toast } from "react-toastify";
 import { NavLink, Navigate, useNavigate, Link } from "react-router-dom";
 import { DropdownDate } from "react-dropdown-date";
 
-
 import Overlap1 from "Images/overlap1.png";
 import { Input } from "components"
 import {Image, Google, Facebook, Linkedin} from "Utils/Images"
-import { registerUser } from "Auths/Users/users";
+import { registerUser, Signup_Tutor } from "Auths";
+import upload from 'Aws/Upload';
 
 
 const CreateAccountSignUp = () => {
-      const navigate = useNavigate();
+  const naviagte = useNavigate();
   const [uploading, setUploading] = useState(false);
   const [img, setImg] = useState("");
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    isMemberType: "student",
+    dateOfBirth: "",
+  });
 
-    const [data, setData] = useState({
-     name: "",
-     email: "",
-     password: "",
-    //  isMemberType: "student",
-    //  dateOfBirth: "",
-   });
+ const [date, setDate] = useState({
+    year: "select year",
+    month: "select month",
+    day: "select day",
+  });
 
-    //  const [date, setDate] = useState({
-    //    year: "select year",
-    //    month: "select month",
-    //    day: "select day",
-    //  });
-
-     const handleInputChange = (e) => {
-      const name =  e.target.name;
-      const value = e.target.value;
-      setData({...data, [name] : value})
-     }
-
-     const handleSubmit =async e => {
-      e.preventDefault();
-      const { name, email, password } = data;
-
-      if(!name || !email || !password) {
-        toast.error("All fields are required", {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 1000,
+     const HandleSubmit = async (e) => {
+    e.preventDefault();
+    const { email, name, password, isMemberType } = data;
+    try {
+      let res;
+      if (isMemberType === "student") {
+        res = await registerUser({ email, name, password });
+      } else {
+        res = await Signup_Tutor({
+          email: email,
+          name: name,
+          password: password,
+          dateOfBirth: `${date.day} ${date.month} ${date.year}`,
+          profileImage: img,
         });
-        return;
       }
-       const response=  await registerUser({name, password, email});
-
-       if(response.message === "email exists!") {
-          toast.error("Your email already existed on our DB, login with your email", {
+      console.log(res);
+      if (res.message === "ok") {
+        setData({ name: "", email: "", password: "" });
+        toast.success("Account created successfully...", {
           position: toast.POSITION.TOP_CENTER,
           autoClose: 1000,
         });
-        return;
-       }
+        setTimeout(() => {
+          if (data.isMemberType === "student") {
+            naviagte(`/verify-account/student_verification/${email}`);
+          } else {
+            naviagte(`/verify-account/tutor_verification/${email}`);
+          }
+        }, 500);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-        if(response.message === "ok") {
-        toast.success("Your account is created, wait few seconds, you will be redirected to your account..", {
-          position: toast.POSITION.TOP_CENTER,
-          autoClose: 1000,
-        });
-          setTimeout( ()=>{
-          // Auto navigate to student_signup
-          navigate(`/verifyAccount/student_signup/${email}`)
-        }, 5000)
-       }
-        
-     }
+  const ToggleMember = (type) => {
+    setData({ ...data, isMemberType: type });
+  };
+
+  const HandleChange = (ev) => {
+    const name = ev.target.name;
+    const value = ev.target.value;
+    setData({ ...data, [name]: value });
+  };
+
+    const handleUpload = (uploadEvent) => {
+    uploadEvent.persist();
+    setUploading(true);
+    const [file] = uploadEvent.target.files;
+    const reader = new FileReader();
+    reader.onloadend = async (onLoadEndEvent) => {
+      const data = onLoadEndEvent.target.result.split(",")[1];
+      const key = file.name;
+      const res = await upload(key, data);
+      if (res) {
+        setImg(res.url);
+        setUploading(false);
+      }
+    };
+    reader.readAsDataURL(file);
+  };
 
   return (
     <>
-       <img
-            src={Overlap1}
-            loading="lazy"
-            alt="background"
-            className="media media-first"
-          />
-
-           <img
-            src={Overlap1}
-            loading="lazy"
-            alt="background"
-            className="media media-second"
-          />
 
       <section className="signup__form">
-        <h2>Create Account</h2>
+          <h2 className="form__section--title">
+          {data.isMemberType === "student"
+            ? "Create account as Student"
+            : "Create account as Tutor"}
+        </h2>
         <p>Sign up with</p>
 
         <ul className="media-link">
@@ -111,7 +124,7 @@ const CreateAccountSignUp = () => {
 
         <h3>OR</h3>
 
-        <form className="form sec-flex" onSubmit={handleSubmit}>
+        <form className="form sec-flex" onSubmit={HandleSubmit}>
           {/* FirstName fieldset */}
           <fieldset className="sec-flex">
             <label>First Name </label>
@@ -120,7 +133,7 @@ const CreateAccountSignUp = () => {
               placeholder={"Enter first Name"}
               name={"name"}
               value={data.name}
-              onChange={handleInputChange}
+              onChange={HandleChange}
               className="styled"
             />
           </fieldset>
@@ -133,7 +146,7 @@ const CreateAccountSignUp = () => {
               placeholder={"Enter Email address"}
               name={"email"}
               value={data.email}
-              onChange={handleInputChange}
+              onChange={HandleChange}
               className="styled"
             />
           </fieldset>
@@ -146,7 +159,7 @@ const CreateAccountSignUp = () => {
               placeholder={"Enter Password"}
               name={"password"}
               value={data.password}
-              onChange={handleInputChange}
+              onChange={HandleChange}
               className="styled"
             />
           </fieldset>
