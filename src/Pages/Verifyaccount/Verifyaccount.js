@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import VerificationInput from "react-verification-input";
 import { VerifyWrap } from "./VerifyStyles";
+import { verifyCode } from "Auths/General/General";
+
 
 
 const Verifyaccount = () => {
@@ -11,7 +13,21 @@ const Verifyaccount = () => {
   const [code, setCode] = useState("");
 
   const HandleSubmit = async () => {
-    
+    try {
+      const Response = await verifyCode(code, email);
+      if(Response.message === "OK") {
+         toast.success("Account verified successfully", {
+          toastId: "Verify-success-id",
+        });
+        navigate("/login")
+      }else if((Response.message = "code not found")) {
+           toast.error(Response.message, {
+          toastId: "Verify-success-id",
+        });
+      }
+    } catch (error) {
+            console.log(error);
+    }
   }
 
   return <VerifyWrap className="sec-flex">
