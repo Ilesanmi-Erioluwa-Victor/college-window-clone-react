@@ -6,6 +6,9 @@ export const VerifyWrap = styled.div`
  justify-content : center;
  align-items : center;
 
+  P {
+    font-size : 1.5rem;
+  }
 
  .Btn_Div .button{
     padding : 1rem;
@@ -13,6 +16,12 @@ export const VerifyWrap = styled.div`
     outline : none;
     border : none;
     background : red;
+    color : white;
+    border-radius : 5px;
+    transition : all .3s ease-in-out;
+    &:hover {
+        background : black;
+    }
  }
 
 `
