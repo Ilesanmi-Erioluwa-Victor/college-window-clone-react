@@ -45,6 +45,13 @@ const Verifyaccount = () => {
               characterSelected: "character--selected",
             }}
           />
+
+          <div>
+            <button className="button"
+          onClick={() => HandleSubmit()}>
+    Verify Now
+            </button>
+          </div>
   </VerifyWrap>;
 };
 
