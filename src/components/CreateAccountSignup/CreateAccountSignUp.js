@@ -95,12 +95,12 @@ const CreateAccountSignUp = () => {
   return (
     <>
 
-      <Form className="signup__form">
-          <h2 className="form__section--title">
+      <Form>
+          <h3 >
           {data.isMemberType === "student"
             ? "Create account as Student"
             : "Create account as Tutor"}
-        </h2>
+        </h3>
         <p>Sign up with</p>
 
         <ul className="media-link">
@@ -123,7 +123,7 @@ const CreateAccountSignUp = () => {
           </li>
         </ul>
 
-        <h3>OR</h3>
+        <h3 className='or'>OR</h3>
 
         <form className="form sec-flex" onSubmit={HandleSubmit}>
           {/* FirstName fieldset */}

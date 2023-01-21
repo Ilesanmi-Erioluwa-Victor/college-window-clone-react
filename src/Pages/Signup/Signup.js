@@ -7,9 +7,8 @@ import CreateAccountSignUp from "components/CreateAccountSignup/CreateAccountSig
 const Signup = (props) => {
   return (
     <Main>
-      
- <CreateAccountSignUp />
-    <SignupComp />
+      <CreateAccountSignUp />
+      <SignupComp />
     </Main>
   );
 };

@@ -4,7 +4,6 @@ import { mediaMaxdevice } from "Utils";
 
 export const Form =  styled.section `
     width : 50%;
-    height : 100vh;
     display : flex;
     flex-direction : column;
     justify-content : center;
@@ -13,12 +12,12 @@ export const Form =  styled.section `
     row-gap : 0.6rem;
     
 
-    h2 {
+    h3 {
       text-align : center;
         align-self : center;
          width : 90%;
         font-weight: 700;
-        font-size: ${TypeScale.headerxl};
+        font-size: ${TypeScale.headerl};
         letter-spacing: 0.04em;
         color: ${grey[100]};
         margin : 0 auto;
@@ -46,7 +45,7 @@ export const Form =  styled.section `
         }
     }
 
-    h3 {
+    .or {
         align-self : center;
 
         font-weight: 400;

@@ -3,10 +3,12 @@ import React from 'react'
 import Img from "Images/bg.png"
 import Overlap1 from "Images/overlap1.png";
 import Overlap2 from "Images/overlap2.png";
+import { FormImage } from './SignupStyle';
+
 
 const SignupComp = () => {
   return (
-     <section className="signup__intro sec-flex">
+     <FormImage className='sec-flex'>
         <figure className="signup__intro--img">
           <img src={Img} loading="lazy" alt="background" />
         </figure>
@@ -31,7 +33,7 @@ const SignupComp = () => {
             className="absolute second"
           />
         </div>
-      </section>
+      </FormImage>
   )
 }
 

@@ -4,10 +4,9 @@ import { mediaMaxdevice } from "Utils";
 
 export const Main = styled.main`
   display : flex;
-  // align-items : center;
+ height : 100vh;
   justify-content : center;
   background-color :${grey[1200]};
-  overflow : hidden;
    position: relative;
 
   .media {
@@ -18,7 +17,7 @@ export const Main = styled.main`
 
 
   .signup__intro {
-    height : 100vh;
+    height : 100%;
     background-color : ${green[100]};
     height : inherit;
     width : 50%;
@@ -30,45 +29,7 @@ export const Main = styled.main`
   }
 
 
-  .signup__intro--writeups {
-    text-align: center;
-
-    justify-content : center;
-    row-gap : 1rem;
-
-    .absolute {
-        position : absolute;
-        display : block;
-    }
-
-    .first {
-        top : 2rem;
-        left : 2rem;
-    }
-
-    .second {
-        bottom: 1rem;
-        right : 2rem
-    }
-
-    h2 {
-       font-weight: 600;
-       font-size: 2.3rem ;
-       letter-spacing: 0.04em;
-       color:${grey[1200]};
-    }
-
-    p {
-        font-weight: 200;
-        font-size:${TypeScale.paragraph} ;
-        font-family : "Tahoma";
-        letter-spacing: 0.03em;
-        color:${grey[1200]};
-        margin-bottom : 0.4rem;
-
-        span { display : block;}
-    }
-  }
+  
 
 @media ${mediaMaxdevice.tabletL} {
 
